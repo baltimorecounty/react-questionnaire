@@ -1,38 +1,51 @@
 import React from "react";
+import localjsonData from "../data/test.json";
 // import ReactHtmlParser from "react-html-parser";
 //import { TableBody } from "@baltimorecounty/dotgov-components";
-import jsonData from "../data/test.json";
+
+import useGetDecisionTreeData from "../hooks/useGetDecisionTreeData";
 import DecisionStep from "./DecisionStep";
 //import XMLParser from "react-xml-parser";
 //import axios from "axios";
-import StepWizard from 'react-step-wizard';
+import StepWizard from "react-step-wizard";
 
-const DecisionTree = props => {
+const DecisionTree = () => {
+  const { decisionTreeData, isLoading, hasError } = useGetDecisionTreeData(
+    window.decisiontree.jsonlocation
+  );
 
-     if (jsonData) {    
-        //console.log(jsonData) ;
-        //console.log(jsonData.Questions) ;
-        return (
-            <div>
-                <StepWizard>
-                    {jsonData.Questions.map((question, i) => 
-                        <DecisionStep 
-                        setName={jsonData.QuestionSetName}
-                        text={question.Question}
-                        choices={question.Choices}
-                        type={question.Type}
-                        key={i}
-                        />
-                        )}
-                </StepWizard>
-            </div>
-            )
-     } else {
+  const jsonData = decisionTreeData ? decisionTreeData : localjsonData;
+  console.log(decisionTreeData);
+  if (hasError) {
+    return (
+      <p>
+        We could not load information for this decision tree. Please try again
+        in a few minutes.
+      </p>
+    );
+  }
 
-         return (
-             <div>Loading</div>
-         )
-     }
+  return (
+    <div>
+      {isLoading ? (
+        <div>
+          <p>{`Loading Decision Tree...`}</p>
+        </div>
+      ) : (
+        <StepWizard>
+          {jsonData.Questions.map((question, i) => (
+            <DecisionStep
+              setName={jsonData.QuestionSetName}
+              text={question.Question}
+              choices={question.Choices}
+              type={question.Type}
+              key={i}
+            />
+          ))}
+        </StepWizard>
+      )}
+    </div>
+  );
 };
 
 export default DecisionTree;
