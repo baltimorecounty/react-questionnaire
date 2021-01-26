@@ -12,11 +12,12 @@ const DecisionTree = (props) => {
           };
 
       choiceElements.push(
-        <Button
-          key={i}
-          text={choice.ChoiceText}
-          onClick={handlesOnClickGo}
-        />
+        <div key={i} className="col">
+            <Button
+            text={choice.ChoiceText}
+            onClick={handlesOnClickGo}
+            />
+        </div>
       );
     }
   });
@@ -28,15 +29,20 @@ const DecisionTree = (props) => {
       if (i === props.currentStep) {indicatorColor = "#FFD986";}
       if (i > props.currentStep) {indicatorColor = "#8091C0";}
       stepIndicatorElements.push(
-        <div key={i} style={{display: "inline", color: indicatorColor}}>
-            <i className="fas fa-circle" aria-hidden="true"></i>
-            <span>{i}</span>
+        <div key={i} className="col-sm" style={{color: indicatorColor}}>
+            <div className="container">
+                <div className="row">
+                    <i className="fas fa-circle" aria-hidden="true"></i>
+                </div>
+                <div className="row">
+                    <span>{i}</span>
+                </div>
+            </div>
         </div>
       )
   }
 
   return (
-
       <Section className="dg_section dark">
       <div className="container">
         <div className="row">
@@ -47,15 +53,19 @@ const DecisionTree = (props) => {
               </span>
               <h2 className="dg_icon-heading">{props.setName}</h2>
             </div>
-            <div className="text">{ReactHtmlParser(props.text)}</div>
-            {choiceElements}
-            <br />
-            {stepIndicatorElements}
           </div>
+        </div>
+        <div className="row">
+            {ReactHtmlParser(props.text)}
+        </div>
+        <div className="row">
+            {choiceElements}
+        </div>
+        <div className="row">
+            {stepIndicatorElements}
         </div>
       </div>
       </Section>
-
   );
 };
 
