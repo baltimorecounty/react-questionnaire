@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<questions>
+  <question>
+    <text>
+      Did this incident take place in Baltimore County, Maryland?
+    </text>
+    <rank>1</rank>
+    <correctAnswer>Yes</correctAnswer>
+    <type>basic</type>
+  </question>
+  <question>
+    <text>
+      Was this incident already reported to police?
+    </text>
+    <rank>2</rank>
+    <correctAnswer>No</correctAnswer>
+    <type>basic</type>
+  </question>
+  <question>
+    <text>
+      Did this incident happen in the last 30 minutes?
+    </text>
+    <rank>3</rank>
+    <correctAnswer>No</correctAnswer>
+    <type>basic</type>
+  </question>
+   <question>
+    <text>
+      Does the lost property include a license plate or firearm?
+    </text>
+    <rank>1</rank>
+    <correctAnswer>No</correctAnswer>
+    <type>lostproperty</type>
+  </question>
+      <question>
+    <text>
+      Did the property have a serial number that you have available to provide?
+    </text>
+    <rank>2</rank>
+    <correctAnswer>No</correctAnswer>
+    <type>lostproperty</type>
+  </question>
+   <question>
+    <text>
+      Does the lost property have a total value of $15,000 or greater?
+    </text>
+    <rank>3</rank>
+    <correctAnswer>No</correctAnswer>
+    <type>lostproperty</type>
+  </question>
+  <question>
+    <text>
+      Does the vehicle have expired registration, no registration, or appear to be inoperable?
+    </text>
+    <rank>1</rank>
+    <correctAnswer>Yes</correctAnswer>
+    <type>abandonedvehicle</type>
+  </question>
+      <question>
+    <text>
+      Are there any known suspects?
+    </text>
+    <rank>1</rank>
+    <correctAnswer>No</correctAnswer>
+    <type>hitandrun</type>
+  </question>
+     <question>
+    <text>
+      Are there any known witnesses?
+    </text>
+    <rank>2</rank>
+    <correctAnswer>No</correctAnswer>
+    <type>hitandrun</type>
+  </question>
+      <question>
+    <text>
+      Is there any evidence?
+    </text>
+    <rank>3</rank>
+    <correctAnswer>No</correctAnswer>
+    <type>hitandrun</type>
+  </question>
+ <question>
+    <text>
+      Was there a note left at the scene?
+    </text>
+    <rank>4</rank>
+    <correctAnswer>No</correctAnswer>
+    <type>hitandrun</type>
+  </question>
+ <question>
+    <text>
+      Was any paint transferred from the other vehicle?
+    </text>
+    <rank>5</rank>
+    <correctAnswer>No</correctAnswer>
+    <type>hitandrun</type>
+  </question> 
+<question>
+    <text>
+      Are there any known suspects?
+    </text>
+    <rank>1</rank>
+    <correctAnswer>No</correctAnswer>
+    <type>destructionofproperty</type>
+  </question>
+    <question>
+    <text>
+      Is there any evidence?
+    </text>
+    <rank>2</rank>
+    <correctAnswer>No</correctAnswer>
+    <type>destructionofproperty</type>
+  </question>
+      <question>
+    <text>
+      Does this crime appear to have been motivated by hate or bias?
+    </text>
+    <rank>3</rank>
+    <correctAnswer>No</correctAnswer>
+    <type>destructionofproperty</type>
+  </question>
+   <question>
+    <text>
+      Is there graffiti involved?
+    </text>
+    <rank>4</rank>
+    <correctAnswer>No</correctAnswer>
+    <type>destructionofproperty</type>
+  </question>
+     <question>
+    <text>
+      Is the property a motor vehicle?
+    </text>
+    <rank>5</rank>
+    <correctAnswer>noanswer</correctAnswer>
+    <type>destructionofproperty</type>
+  </question>
+  <question>
+    <text>
+      Are there any known suspects?
+    </text>
+    <rank>1</rank>
+    <correctAnswer>No</correctAnswer>
+    <type>theft</type>
+  </question>
+  <question>
+    <text>
+      Are there any known witnesses?
+    </text>
+    <rank>2</rank>
+    <correctAnswer>No</correctAnswer>
+    <type>theft</type>
+  </question>
+      <question>
+    <text>
+      Does the stolen property include a license plate, firearm or motor vehicle?
+    </text>
+    <rank>3</rank>
+    <correctAnswer>No</correctAnswer>
+    <type>theft</type>
+  </question>
+    <question>
+    <text>
+      Does the stolen property have a serial number that you have available to provide?
+    </text>
+    <rank>4</rank>
+    <correctAnswer>No</correctAnswer>
+    <type>theft</type>
+  </question>
+    <question>
+    <text>
+      Does the stolen property have a total value of $15,000 or greater?
+    </text>
+    <rank>5</rank>
+    <correctAnswer>No</correctAnswer>
+    <type>theft</type>
+  </question>
+  	 <question>
+    <text>
+      Was the property taken from inside a residential home, apartment, garage or shed?
+    </text>
+    <rank>6</rank>
+    <correctAnswer>No</correctAnswer>
+    <type>theft</type>
+  </question>
+   	 <question>
+    <text>
+      Was the property taken from inside a business or institution while closed?
+    </text>
+    <rank>7</rank>
+    <correctAnswer>No</correctAnswer>
+    <type>theft</type>
+  </question>
+     <question>
+    <text>
+      Was the stolen property taken from within your vehicle?
+    </text>
+    <rank>8</rank>
+    <correctAnswer>noanswer</correctAnswer>
+    <type>theft</type>
+  </question>
+  <question>
+    <text>
+      Is there a known suspect?
+    </text>
+    <rank>1</rank>
+    <correctAnswer>Yes</correctAnswer>
+    <type>shoplifting</type>
+  </question>
+  <question>
+    <text>
+      Does the amount of the theft exceed $1000.00?
+    </text>
+    <rank>2</rank>
+    <correctAnswer>No</correctAnswer>
+    <type>shoplifting</type>
+  </question>
+  <question>
+    <text>
+      Is a juvenile suspect involved?
+    </text>
+    <rank>3</rank>
+    <correctAnswer>No</correctAnswer>
+    <type>shoplifting</type>
+  </question>
+  <!--<question>
+    <text>
+      Does suspect possess drugs, weapons, or fictitious ID?
+    </text>
+    <rank>3</rank>
+    <correctAnswer>No</correctAnswer>
+    <type>shoplifting</type>
+  </question>-->
+  <question>
+    <text>
+      Is suspect cooperative? (not resisting apprehension)
+    </text>
+    <rank>4</rank>
+    <correctAnswer>Yes</correctAnswer>
+    <type>shoplifting</type>
+  </question>
+  <question>
+    <text>
+      Was the merchandise recovered?
+    </text>
+    <rank>5</rank>
+    <correctAnswer>Yes</correctAnswer>
+    <type>shoplifting</type>
+  </question>
+  <question>
+    <text>
+      Does the suspect have a valid Maryland state issued ID?
+    </text>
+    <rank>6</rank>
+    <correctAnswer>Yes</correctAnswer>
+    <type>shoplifting</type>
+  </question>
+  <question>
+    <text>
+      Are there indications that this is Organized Retail Theft?
+    </text>
+    <rank>7</rank>
+    <correctAnswer>No</correctAnswer>
+    <type>shoplifting</type>
+  </question>
+  <question>
+    <text>
+      Are there other crimes involved in the incident? (Assault, Destruction of Property, or Contraband such as drugs, weapons, or fictitious ID?)
+    </text>
+    <rank>8</rank>
+    <correctAnswer>No</correctAnswer>
+    <type>shoplifting</type>
+  </question>
+  <question>
+    <text>
+      Is the suspect a repeat shoplifter?
+    </text>
+    <rank>9</rank>
+    <correctAnswer>No</correctAnswer>
+    <type>shoplifting</type>
+  </question>
+  <question>
+    <text>
+     Does the suspect reside in Maryland?
+    </text>
+    <rank>10</rank>
+    <correctAnswer>Yes</correctAnswer>
+    <type>shoplifting</type>
+  </question>
+  <question>
+    <text>
+      Is this a Special Police Officer (SPO) apprehension?
+    </text>
+    <rank>11</rank>
+    <correctAnswer>No</correctAnswer>
+    <type>shoplifting</type>
+  </question>
+  </questions>

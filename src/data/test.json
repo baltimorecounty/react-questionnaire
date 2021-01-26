@@ -1,0 +1,41 @@
+{
+    "QuestionSetName" : "Does My Report Qualify?",
+    "Questions" : [
+        {
+            "Id" : 1,
+            "Question" : "Did this incident take place in Baltimore County, Maryland?",
+            "Type" : "Button",
+            "Choices" : [
+                {
+                    "ChoiceText": "Yes",
+                    "GoTo": "3"
+                },
+                {
+                    "ChoiceText": "No",
+                    "GoTo": "2"
+                }
+            ]
+        },
+        {
+            "Id" : 2,
+            "Question" : "Was this incident already reported to police?",
+            "Type" : "Button",
+            "Choices" : [
+                {
+                    "ChoiceText": "Yes",
+                    "GoTo": "3"
+                },
+                {
+                    "ChoiceText": "No",
+                    "GoTo": "3"
+                }
+            ]
+        },
+        {
+            "Id" : 3,
+            "Question" : "Your report is qualified to file online. <a href='http://www.baltimorecountymd.gov/Redirect/externalwebsites/Coplogic/theftfromvehicleredirect.html'>File a Report Now</a>",
+            "Type" : "Message",
+            "Choices" : []
+        }
+    ]
+}
