@@ -1,46 +1,40 @@
 import React from "react";
 import ReactHtmlParser from "react-html-parser";
-import { Button, Section } from "@baltimorecounty/dotgov-components";
+import { Section } from "@baltimorecounty/dotgov-components";
+import StepIndicators from "./StepIndicators";
+import ButtonSet from "./ButtonSet";
+import RadioSet from "./RadioSet";
+import Message from "./Message";
 
 const DecisionTree = (props) => {
 
-  var choiceElements = [];
-  props.choices.forEach((choice, i) => {
-    if (props.type === "Button") {
-        const handlesOnClickGo = () => {
-            props.goToStep(choice.GoTo);
-          };
+  var choiceList;
 
-      choiceElements.push(
-        <div key={i} className="col dg_section-cta">
-            <Button
-            text={choice.ChoiceText}
-            onClick={handlesOnClickGo}
-            />
-        </div>
-      );
+    switch (props.type) {
+        default:
+        case "Button":
+            choiceList =
+                <ButtonSet 
+                    choices={props.choices}
+                    goToStep={props.goToStep}
+                />
+            ;
+        break;
+        case "Radio":
+            choiceList =
+                <RadioSet 
+                    id={props.id}
+                    choices={props.choices}
+                    goToStep={props.goToStep}
+                />
+        break;
+        case "Message":
+            choiceList = 
+                <Message 
+                    choices={props.choices}
+                />
+        break;
     }
-  });
-
-  var stepIndicatorElements = [];
-  for (var i = 1; i <= props.totalSteps; i++) {
-       var indicatorColor;
-      if (i < props.currentStep) {indicatorColor = "#F7F7F7";}
-      if (i === props.currentStep) {indicatorColor = "#FFD986";}
-      if (i > props.currentStep) {indicatorColor = "#8091C0";}
-      stepIndicatorElements.push(
-        <div key={i} className="col dg_section-cta" style={{color: indicatorColor}}>
-            <div className="container">
-                <div className="row">
-                    <i className="fas fa-circle" aria-hidden="true"></i>
-                </div>
-                <div className="row">
-                    <span>{i}</span>
-                </div>
-            </div>
-        </div>
-      )
-  }
 
   return (
       <Section className="dg_section dark">
@@ -60,14 +54,11 @@ const DecisionTree = (props) => {
                 {ReactHtmlParser(props.text)}
             </div>
         </div>
-        <div className="row">
-                {choiceElements}
-        </div>
-        <div style={{textAlign: "-webkit-center"}}>
-            <div className="row" style={{width: "fit-content"}}>
-                {stepIndicatorElements}
-            </div>
-        </div>
+        {choiceList}
+        <StepIndicators
+            currentStep={props.currentStep}
+            totalSteps={props.totalSteps}
+        />
       </div>
       </Section>
   );

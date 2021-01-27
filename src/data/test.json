@@ -1,41 +1,50 @@
 {
-    "QuestionSetName" : "Does My Report Qualify?",
+    "QuestionSetName" : "Heading",
     "Questions" : [
         {
             "Id" : 1,
-            "Question" : "Did this incident take place in Baltimore County, Maryland?",
+            "Question" : "Do you have the ability to repeat the following statement?: 'How much wood could a woodchuck chuck if a woodchuck could chuck would?'",
             "Type" : "Button",
             "Choices" : [
                 {
-                    "ChoiceText": "Yes",
-                    "GoTo": "3"
-                },
-                {
                     "ChoiceText": "No",
                     "GoTo": "2"
+                },
+                {
+                    "ChoiceText": "Yes",
+                    "GoTo": "3"
                 }
             ]
         },
         {
             "Id" : 2,
-            "Question" : "Was this incident already reported to police?",
-            "Type" : "Button",
+            "Question" : "Select one of the options below.",
+            "Type" : "Radio",
             "Choices" : [
                 {
-                    "ChoiceText": "Yes",
+                    "ChoiceText": "Option One",
                     "GoTo": "3"
                 },
                 {
-                    "ChoiceText": "No",
+                    "ChoiceText": "Option Two",
+                    "GoTo": "3"
+                },
+                {
+                    "ChoiceText": "Option Three",
                     "GoTo": "3"
                 }
             ]
         },
         {
             "Id" : 3,
-            "Question" : "Your report is qualified to file online. <a href='http://www.baltimorecountymd.gov/Redirect/externalwebsites/Coplogic/theftfromvehicleredirect.html'>File a Report Now</a>",
+            "Question" : "Congratulations! You have completed the task.",
             "Type" : "Message",
-            "Choices" : []
+            "Choices" : [
+                {
+                    "ChoiceText": "Open Something",
+                    "GoTo": "http://www.baltimorecountymd.gov/Redirect/externalwebsites/Coplogic/theftfromvehicleredirect.html"
+                }
+            ]
         }
     ]
 }
