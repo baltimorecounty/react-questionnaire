@@ -12,6 +12,7 @@ const DecisionTree = (props) => {
       buttonElements.push(
         <div key={"button"+i} className="col dg_section-cta">
             <Button
+            key={"choice"+i}
             text={choice.ChoiceText}
             onClick={handlesOnClickGo}
             />

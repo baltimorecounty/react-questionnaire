@@ -8,33 +8,31 @@ import Message from "./Message";
 
 const DecisionTree = (props) => {
 
-  var choiceElements = [];
+  var choiceList;
 
     switch (props.type) {
         default:
         case "Button":
-            choiceElements.push(
+            choiceList =
                 <ButtonSet 
                     choices={props.choices}
                     goToStep={props.goToStep}
                 />
-            );
+            ;
         break;
         case "Radio":
-            choiceElements.push(
+            choiceList =
                 <RadioSet 
                     id={props.id}
                     choices={props.choices}
                     goToStep={props.goToStep}
                 />
-            );
         break;
         case "Message":
-            choiceElements.push(
+            choiceList = 
                 <Message 
                     choices={props.choices}
                 />
-            );
         break;
     }
 
@@ -56,7 +54,7 @@ const DecisionTree = (props) => {
                 {ReactHtmlParser(props.text)}
             </div>
         </div>
-        {choiceElements}
+        {choiceList}
         <StepIndicators
             currentStep={props.currentStep}
             totalSteps={props.totalSteps}
