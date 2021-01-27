@@ -15,6 +15,7 @@ const DecisionTree = props => {
                     {jsonData.Questions.map((question, i) => 
                         <DecisionStep 
                         setName={jsonData.QuestionSetName}
+                        id={question.Id}
                         text={question.Question}
                         choices={question.Choices}
                         type={question.Type}

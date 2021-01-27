@@ -19,7 +19,7 @@
         {
             "Id" : 2,
             "Question" : "Was this incident already reported to police?",
-            "Type" : "Button",
+            "Type" : "Radio",
             "Choices" : [
                 {
                     "ChoiceText": "Yes",
