@@ -1,10 +1,7 @@
 import React from "react";
-// import ReactHtmlParser from "react-html-parser";
 //import { TableBody } from "@baltimorecounty/dotgov-components";
 import jsonData from "../data/test.json";
 import DecisionStep from "./DecisionStep";
-//import XMLParser from "react-xml-parser";
-//import axios from "axios";
 import StepWizard from 'react-step-wizard';
 
 const DecisionTree = props => {
