@@ -9,7 +9,7 @@ const StepIndicators = (props) => {
       if (i === props.currentStep) {indicatorColor = "#FFD986";}
       if (i > props.currentStep) {indicatorColor = "#8091C0";}
       stepIndicatorElements.push(
-        <div key={i} className="col dg_section-cta" style={{color: indicatorColor}}>
+        <div key={"step"+i} className="col dg_section-cta" style={{color: indicatorColor}}>
             <div className="container">
                 <div className="row">
                     <i className="fas fa-circle" aria-hidden="true"></i>

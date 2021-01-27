@@ -15,7 +15,7 @@ const [getRadioChoice, setRadioChoice] = useState(0);
     var radioElements = [];
     props.choices.forEach((choice, i) => {
         radioElements.push(
-        <div key={i} className="row" style={{width: "fit-content"}}>
+        <div key={"radio"+i} className="row" style={{width: "fit-content"}}>
             <RadioButton
                 id={choice.ChoiceText + choice.GoTo}
                 name={"radio" + props.id}

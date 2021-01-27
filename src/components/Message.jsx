@@ -6,7 +6,7 @@ const DecisionTree = (props) => {
   var buttonElements = [];
   props.choices.forEach((choice, i) => {
         const handlesOnClickGo = () => {
-            props.goToStep(choice.GoTo);
+            window.location.href=choice.GoTo;
           };
 
       buttonElements.push(
@@ -20,8 +20,15 @@ const DecisionTree = (props) => {
   });
 
   return (
-    <div className="row">
+      <div>
+        <div className="row">
+            <div className="col dg_section-cta">
+                <i className="fas fa-check" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div className="row">
             {buttonElements}
+        </div>
     </div>
   );
 };

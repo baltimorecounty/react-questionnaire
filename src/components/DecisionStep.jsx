@@ -4,6 +4,7 @@ import { Section } from "@baltimorecounty/dotgov-components";
 import StepIndicators from "./StepIndicators";
 import ButtonSet from "./ButtonSet";
 import RadioSet from "./RadioSet";
+import Message from "./Message";
 
 const DecisionTree = (props) => {
 
@@ -25,6 +26,13 @@ const DecisionTree = (props) => {
                     id={props.id}
                     choices={props.choices}
                     goToStep={props.goToStep}
+                />
+            );
+        break;
+        case "Message":
+            choiceElements.push(
+                <Message 
+                    choices={props.choices}
                 />
             );
         break;
