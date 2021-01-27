@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { GetDecisionTreeData } from "../services/GetJsonData";
+import { GetDecisionTreeDataFetch } from "../services/GetJsonData";
 
 const useGetDecisionTreeData = (fileLocation) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -7,7 +7,7 @@ const useGetDecisionTreeData = (fileLocation) => {
   const [decisionTreeData, setDecisionTreeData] = useState([]);
 
   useEffect(() => {
-    GetDecisionTreeData(fileLocation)
+    GetDecisionTreeDataFetch(fileLocation)
       .then((response) => {
         setDecisionTreeData(response);
       })

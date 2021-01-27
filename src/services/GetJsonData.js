@@ -1,11 +1,12 @@
-import axios from "axios";
+
+
 
 /**
  * Get Past Meeting Events Data from Service
  */
-const GetDecisionTreeData = (fileLocation) =>
-  axios
-    .get(fileLocation)
-    .then(({ status, data }) => (status === 200 ? data : []));
+const GetDecisionTreeDataFetch = async (fileLocation) =>
+  await fetch(fileLocation).then((response) =>
+    response ? response.json() : []
+  );
 
-export { GetDecisionTreeData };
+export {  GetDecisionTreeDataFetch };
