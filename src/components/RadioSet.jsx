@@ -4,8 +4,8 @@ import { Button, RadioButton } from "@baltimorecounty/dotgov-components";
 const DecisionTree = (props) => {
 const [getRadioChoice, setRadioChoice] = useState(0);
 
-    const handleSelectionChange = (value) => {
-        setRadioChoice(value);
+    const handleSelectionChange = (radio) => {
+        setRadioChoice(radio.value);
     };
 
     const handlesOnClickGo = () => {
