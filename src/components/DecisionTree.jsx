@@ -1,21 +1,19 @@
 import React from "react";
 import localjsonData from "../data/test.json";
-// import ReactHtmlParser from "react-html-parser";
-//import { TableBody } from "@baltimorecounty/dotgov-components";
-
 import useGetDecisionTreeData from "../hooks/useGetDecisionTreeData";
 import DecisionStep from "./DecisionStep";
-//import XMLParser from "react-xml-parser";
-//import axios from "axios";
 import StepWizard from "react-step-wizard";
 
-const DecisionTree = () => {
-  const { decisionTreeData, isLoading, hasError } = useGetDecisionTreeData(
-    window.decisiontree.jsonlocation
-  );
+const filelocation = window.decisiontree.jsonlocation;
 
-  const jsonData = decisionTreeData ? decisionTreeData : localjsonData;
-  console.log(decisionTreeData);
+const DecisionTree = () => {
+  const [
+    { decisionTreeData = [], isLoading, hasError },
+  ] = useGetDecisionTreeData(filelocation);
+
+  const jsonData =
+    decisionTreeData.length > 0 ? decisionTreeData : localjsonData;
+
   if (hasError) {
     return (
       <p>
