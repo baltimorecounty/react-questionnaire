@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, RadioButton } from "@baltimorecounty/dotgov-components";
+import { Button, RadioButton, Card, CardContent } from "@baltimorecounty/dotgov-components";
 
 const DecisionTree = (props) => {
 const [getRadioChoice, setRadioChoice] = useState(0);
@@ -15,14 +15,18 @@ const [getRadioChoice, setRadioChoice] = useState(0);
     var radioElements = [];
     props.choices.forEach((choice, i) => {
         radioElements.push(
-        <div key={"radio"+i} className="row" style={{width: "fit-content"}}>
-            <RadioButton
-                id={choice.ChoiceText + choice.GoTo}
-                name={"radio" + props.id}
-                label={choice.ChoiceText}
-                value={choice.GoTo}
-                onChange={handleSelectionChange}
-            />
+        <div key={"radio"+i} className="row" style={{width: "80%"}}>
+            <Card>
+                <CardContent className="text-left">
+                    <RadioButton
+                        id={choice.ChoiceText + choice.GoTo}
+                        name={"radio" + props.id}
+                        label={choice.ChoiceText}
+                        value={choice.GoTo}
+                        onChange={handleSelectionChange}
+                    />
+                </CardContent>
+            </Card>
         </div>
         );
     });
@@ -32,7 +36,7 @@ const [getRadioChoice, setRadioChoice] = useState(0);
         {radioElements}
         <div className="row" style={{width: "fit-content"}}>
             <Button
-                text="Submit"
+                text="Next"
                 onClick={handlesOnClickGo}
                 />
         </div>
