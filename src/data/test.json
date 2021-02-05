@@ -19,15 +19,15 @@
         {
             "Id" : 2,
             "Question" : "Select one of the options below.",
-            "Type" : "Radio",
+            "Type" : "Dropdown",
             "Choices" : [
                 {
                     "ChoiceText": "Option One",
-                    "GoTo": "3"
+                    "GoTo": "1"
                 },
                 {
                     "ChoiceText": "Option Two",
-                    "GoTo": "3"
+                    "GoTo": "2"
                 },
                 {
                     "ChoiceText": "Option Three",
