@@ -5,7 +5,6 @@ const DecisionTree = (props) => {
   const [getDropdownChoice, setDropdownChoice] = useState(0);
 
   const handleSelectionChange = (event) => {
-    console.log(event);
     setDropdownChoice(event.target.value);
   };
 
@@ -18,11 +17,9 @@ const DecisionTree = (props) => {
     selectOptions.push({ id: choice.GoTo, name: choice.ChoiceText });
   });
 
-  console.log(selectOptions);
-
   return (
-    <div style={{ textAlign: "-webkit-center" }}>
-      <div className="row" style={{ width: "fit-content" }}>
+    <div className="centered-row-parent">
+      <div className="row centered-row">
         <Select
           id={"dropdown" + props.id}
           label={""}
@@ -30,7 +27,7 @@ const DecisionTree = (props) => {
           onChange={handleSelectionChange}
         />
       </div>
-      <div className="row" style={{ width: "fit-content" }}>
+      <div className="row centered-row">
         <Button text="Next" onClick={handlesOnClickGo} />
       </div>
     </div>

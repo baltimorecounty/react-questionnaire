@@ -11,6 +11,8 @@ import BackButton from "./BackButton";
 const DecisionTree = (props) => {
   var choiceList;
 
+  console.log(props);
+
   switch (props.type) {
     default:
     case "Button":
@@ -53,8 +55,8 @@ const DecisionTree = (props) => {
       />
       <div className="container">
         <div className="row">
-          <div className="col dg_section-cta">
-            <h2>{ReactHtmlParser(props.text)}</h2>
+          <div className="col dg_section-cta header">
+            <div className="header">{ReactHtmlParser(props.text)}</div>
           </div>
         </div>
         {choiceList}
