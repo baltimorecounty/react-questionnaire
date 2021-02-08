@@ -40,6 +40,7 @@ const DecisionTree = () => {
               choices={question.Choices}
               type={question.Type}
               key={i}
+              id={question.Id}
             />
           ))}
         </StepWizard>

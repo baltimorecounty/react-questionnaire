@@ -11,8 +11,6 @@ import BackButton from "./BackButton";
 const DecisionTree = (props) => {
   var choiceList;
 
-  console.log(props);
-
   switch (props.type) {
     default:
     case "Button":

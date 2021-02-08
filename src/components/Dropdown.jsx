@@ -9,12 +9,18 @@ const DecisionTree = (props) => {
   };
 
   const handlesOnClickGo = () => {
-    props.goToStep(getDropdownChoice);
+    var goToValue = getDropdownChoice.substring(
+      getDropdownChoice.indexOf("|") + 1
+    );
+    props.goToStep(goToValue);
   };
 
   var selectOptions = [];
   props.choices.forEach((choice, i) => {
-    selectOptions.push({ id: choice.GoTo, name: choice.ChoiceText });
+    selectOptions.push({
+      id: choice.ChoiceText + "|" + choice.GoTo,
+      name: choice.ChoiceText,
+    });
   });
 
   return (
