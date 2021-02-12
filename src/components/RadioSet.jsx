@@ -1,18 +1,11 @@
 import React, { useState } from "react";
-import {
-  Button,
-  RadioButton,
-  Card,
-  CardContent,
-} from "@baltimorecounty/dotgov-components";
+import { Button, Card, CardContent } from "@baltimorecounty/dotgov-components";
 
 const DecisionTree = (props) => {
   const [getRadioValue, setRadioValue] = useState(0);
 
-  const handleSelectionChange = (radio) => {
-    if (radio.checked) {
-      setRadioValue(radio.value);
-    }
+  const handleSelectionChange = (event) => {
+    setRadioValue(event.target.value);
   };
 
   const handlesOnClickGo = () => {
@@ -20,28 +13,34 @@ const DecisionTree = (props) => {
     props.goToStep(goToValue);
   };
 
-  var radioElements = [];
-  props.choices.forEach((choice, i) => {
-    radioElements.push(
-      <div key={"radio" + i} className="row radio-body">
-        <Card>
-          <CardContent className="text-left">
-            <RadioButton
-              id={choice.ChoiceText + choice.GoTo}
-              name={"radio" + props.id}
-              label={choice.ChoiceText}
-              value={choice.ChoiceText + "|" + choice.GoTo}
-              onChange={handleSelectionChange}
-            />
-          </CardContent>
-        </Card>
-      </div>
-    );
-  });
-
   return (
     <div className="centered-row-parent">
-      {radioElements}
+      {props.choices.map(({ ChoiceText, GoTo }) => {
+        return (
+          <div key={"radio" + ChoiceText + GoTo} className="row radio-body">
+            <Card>
+              <CardContent className="text-left">
+                <div className="dg_radio">
+                  <input
+                    className="dg_radio-input"
+                    id={ChoiceText + GoTo}
+                    name={"radio" + props.id}
+                    type="radio"
+                    value={ChoiceText + "|" + GoTo}
+                    onChange={handleSelectionChange}
+                  />
+                  <label
+                    className="dg_label dg_radio-label"
+                    htmlFor={ChoiceText + GoTo}
+                  >
+                    {ChoiceText}
+                  </label>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        );
+      })}
       <div className="row centered-row">
         <Button text="Next" onClick={handlesOnClickGo} />
       </div>
