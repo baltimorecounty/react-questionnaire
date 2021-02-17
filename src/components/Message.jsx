@@ -3,6 +3,8 @@ import { Button } from "@baltimorecounty/dotgov-components";
 
 const DecisionTree = (props) => {
   var buttonElements = [];
+  const { options } = props;
+
   props.choices.forEach((choice, i) => {
     const handlesOnClickGo = () => {
       window.location.href = choice.GoTo;
@@ -18,9 +20,11 @@ const DecisionTree = (props) => {
   return (
     <div>
       <div className="row">
-        <div className="col dg_section-cta success-checkmark">
-          <i className="fas fa-check" aria-hidden="true"></i>
-        </div>
+        {options.ShowSuccessIcon ? (
+          <div className="col dg_section-cta success-checkmark">
+            <i className="fas fa-check" aria-hidden="true"></i>
+          </div>
+        ) : null}
       </div>
       <div className="row">{buttonElements}</div>
     </div>

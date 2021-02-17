@@ -4,6 +4,8 @@ import { Button, Select } from "@baltimorecounty/dotgov-components";
 const DecisionTree = (props) => {
   const [getDropdownChoice, setDropdownChoice] = useState(0);
 
+  console.log(props);
+
   const handleSelectionChange = (event) => {
     setDropdownChoice(event.target.value);
   };
@@ -24,17 +26,21 @@ const DecisionTree = (props) => {
   });
 
   return (
-    <div className="centered-row-parent">
-      <div className="row centered-row">
-        <Select
-          id={"dropdown" + props.id}
-          label={""}
-          options={selectOptions}
-          onChange={handleSelectionChange}
-        />
+    <div className="container">
+      <div className="row d-flex">
+        <div className="col-md-8 col-xs-12 align-self-center">
+          <Select
+            id={"dropdown" + props.id}
+            label=""
+            options={selectOptions}
+            onChange={handleSelectionChange}
+          />
+        </div>
       </div>
-      <div className="row centered-row">
-        <Button text="Next" onClick={handlesOnClickGo} />
+      <div className="row d-flex">
+        <div className="col-md-6 col-xs-12">
+          <Button text="Next" onClick={handlesOnClickGo} />
+        </div>
       </div>
     </div>
   );

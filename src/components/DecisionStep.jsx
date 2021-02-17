@@ -15,7 +15,11 @@ const DecisionTree = (props) => {
     default:
     case "Button":
       choiceList = (
-        <ButtonSet choices={props.choices} goToStep={props.goToStep} />
+        <ButtonSet
+          choices={props.choices}
+          goToStep={props.goToStep}
+          options={props.options}
+        />
       );
       break;
     case "Radio":
@@ -24,6 +28,7 @@ const DecisionTree = (props) => {
           id={props.id}
           choices={props.choices}
           goToStep={props.goToStep}
+          options={props.options}
         />
       );
       break;
@@ -33,11 +38,12 @@ const DecisionTree = (props) => {
           id={props.id}
           choices={props.choices}
           goToStep={props.goToStep}
+          options={props.options}
         />
       );
       break;
     case "Message":
-      choiceList = <Message choices={props.choices} />;
+      choiceList = <Message choices={props.choices} options={props.options} />;
       break;
   }
 
@@ -53,8 +59,8 @@ const DecisionTree = (props) => {
       />
       <div className="container">
         <div className="row">
-          <div className="col dg_section-cta header">
-            <div className="header">{ReactHtmlParser(props.text)}</div>
+          <div className="col dg_section-cta ">
+            <div>{ReactHtmlParser(props.text)}</div>
           </div>
         </div>
         {choiceList}
