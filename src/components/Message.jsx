@@ -4,7 +4,7 @@ import { Button } from "@baltimorecounty/dotgov-components";
 const DecisionTree = (props) => {
   var buttonElements = [];
   const { options } = props;
-
+console.log(options)
   props.choices.forEach((choice, i) => {
     const handlesOnClickGo = () => {
       window.location.href = choice.GoTo;

@@ -4,8 +4,6 @@ import { Button, Select } from "@baltimorecounty/dotgov-components";
 const DecisionTree = (props) => {
   const [getDropdownChoice, setDropdownChoice] = useState(0);
 
-  console.log(props);
-
   const handleSelectionChange = (event) => {
     setDropdownChoice(event.target.value);
   };

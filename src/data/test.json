@@ -1,10 +1,8 @@
 {
   "QuestionSetName": "Heading",
-  "Options": [
-    {
-      "ShowSuccessIcon": true
-    }
-  ],
+  "Options": {
+    "ShowSuccessIcon": false
+  },
   "Questions": [
     {
       "Id": 1,
