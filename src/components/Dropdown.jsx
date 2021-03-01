@@ -25,7 +25,7 @@ const DecisionTree = (props) => {
 
   return (
     <div className="container">
-      <div className="row d-flex">
+      <div className="row d-flex dg_questionnaire_content">
         <div className="col-md-8 col-xs-12 align-self-center">
           <Select
             id={"dropdown" + props.id}
@@ -35,10 +35,8 @@ const DecisionTree = (props) => {
           />
         </div>
       </div>
-      <div className="row d-flex">
-        <div className="col-md-6 col-xs-12">
-          <Button text="Next" onClick={handlesOnClickGo} />
-        </div>
+      <div className="row d-flex dg_questionnaire_content">
+        <Button text="Next" onClick={handlesOnClickGo} />
       </div>
     </div>
   );
