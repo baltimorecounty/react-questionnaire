@@ -15,7 +15,8 @@
     "react-html-parser": "^2.0.2",
     "react-scripts": "4.0.1",
     "react-step-wizard": "^5.3.5",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^0.2.4",
+    "react-bootstrap": "1.4.3"
   },
   "scripts": {
     "start": "react-scripts start",

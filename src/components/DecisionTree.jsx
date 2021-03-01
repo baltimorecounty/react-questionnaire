@@ -37,9 +37,11 @@ const DecisionTree = () => {
             <DecisionStep
               setName={decisionTreeData.QuestionSetName}
               text={question.Question}
+              options={decisionTreeData.Options}
               choices={question.Choices}
               type={question.Type}
               key={i}
+              id={question.Id}
             />
           ))}
         </StepWizard>

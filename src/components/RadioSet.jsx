@@ -1,41 +1,54 @@
 import React, { useState } from "react";
-import { Button, RadioButton } from "@baltimorecounty/dotgov-components";
+import { Button, Card, CardContent } from "@baltimorecounty/dotgov-components";
 
 const DecisionTree = (props) => {
-const [getRadioChoice, setRadioChoice] = useState(0);
+  const [getRadioValue, setRadioValue] = useState(0);
 
-    const handleSelectionChange = (radio) => {
-        setRadioChoice(radio.value);
-    };
+  const handleSelectionChange = (event) => {
+    setRadioValue(event.target.value);
+  };
 
-    const handlesOnClickGo = () => {
-        props.goToStep(getRadioChoice);
-    };
-
-    var radioElements = [];
-    props.choices.forEach((choice, i) => {
-        radioElements.push(
-        <div key={"radio"+i} className="row" style={{width: "fit-content"}}>
-            <RadioButton
-                id={choice.ChoiceText + choice.GoTo}
-                name={"radio" + props.id}
-                label={choice.ChoiceText}
-                value={choice.GoTo}
-                onChange={handleSelectionChange}
-            />
-        </div>
-        );
-    });
+  const handlesOnClickGo = () => {
+    var goToValue = getRadioValue.substring(getRadioValue.indexOf("|") + 1);
+    props.goToStep(goToValue);
+  };
 
   return (
-    <div style={{textAlign: "-webkit-center"}}>
-        {radioElements}
-        <div className="row" style={{width: "fit-content"}}>
-            <Button
-                text="Submit"
-                onClick={handlesOnClickGo}
-                />
-        </div>
+    <div className="container">
+      {props.choices.map(({ ChoiceText, GoTo }) => {
+        return (
+          <div
+            key={"radio" + ChoiceText + GoTo}
+            className="row d-flex dg_questionnaire_content"
+          >
+            <div className="col-md-8 col-xs-12 align-self-center">
+              <Card>
+                <CardContent className="text-left">
+                  <div className="dg_radio">
+                    <input
+                      className="dg_radio-input"
+                      id={ChoiceText + GoTo}
+                      name={"radio" + props.id}
+                      type="radio"
+                      value={ChoiceText + "|" + GoTo}
+                      onChange={handleSelectionChange}
+                    />
+                    <label
+                      className="dg_label dg_radio-label"
+                      htmlFor={ChoiceText + GoTo}
+                    >
+                      {ChoiceText}
+                    </label>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        );
+      })}
+      <div className="row d-flex dg_questionnaire_content">
+        <Button text="Next" onClick={handlesOnClickGo} />
+      </div>
     </div>
   );
 };
