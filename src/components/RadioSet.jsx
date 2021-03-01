@@ -25,7 +25,7 @@ const DecisionTree = (props) => {
       <div>
         {hasError ? (
           <div>
-            <ErrorMessage errorMessage="DO something" />
+            <ErrorMessage errorMessage="Please select one of the options below" />
           </div>
         ) : null}
       </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import localjsonData from "../data/test.json";
+//import localjsonData from "../data/test.json";
 import useGetDecisionTreeData from "../hooks/useGetDecisionTreeData";
 import DecisionStep from "./DecisionStep";
 import StepWizard from "react-step-wizard";
@@ -12,12 +12,11 @@ const DecisionTree = () => {
   ] = useGetDecisionTreeData(filelocation);
 
   //Uncomment this to test locally
-  const jsonData =
-    decisionTreeData.length > 0 ? decisionTreeData : localjsonData;
+  //const jsonData = decisionTreeData.length > 0 ? decisionTreeData : localjsonData;
 
   //Must remove the decisionTreeData.length > 0 in order to test locally
 
-  if (jsonData.length === 0 || hasError) {
+  if (decisionTreeData.length === 0 || hasError) {
     return (
       <p>
         We could not load information for this decision tree. Please try again
@@ -34,11 +33,11 @@ const DecisionTree = () => {
         </div>
       ) : (
         <StepWizard>
-          {jsonData.Questions.map((question, i) => (
+          {decisionTreeData.Questions.map((question, i) => (
             <DecisionStep
-              setName={jsonData.QuestionSetName}
+              setName={decisionTreeData.QuestionSetName}
               text={question.Question}
-              options={jsonData.Options}
+              options={decisionTreeData.Options}
               choices={question.Choices}
               type={question.Type}
               key={i}
