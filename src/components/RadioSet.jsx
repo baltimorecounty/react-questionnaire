@@ -17,7 +17,10 @@ const DecisionTree = (props) => {
     <div className="container">
       {props.choices.map(({ ChoiceText, GoTo }) => {
         return (
-          <div key={"radio" + ChoiceText + GoTo} className="row d-flex">
+          <div
+            key={"radio" + ChoiceText + GoTo}
+            className="row d-flex dg_questionnaire_content"
+          >
             <div className="col-md-8 col-xs-12 align-self-center">
               <Card>
                 <CardContent className="text-left">
@@ -43,10 +46,8 @@ const DecisionTree = (props) => {
           </div>
         );
       })}
-      <div className="row d-flex">
-        <div className="col-md-6 col-xs-12">
-          <Button text="Next" onClick={handlesOnClickGo} />
-        </div>
+      <div className="row d-flex dg_questionnaire_content">
+        <Button text="Next" onClick={handlesOnClickGo} />
       </div>
     </div>
   );
