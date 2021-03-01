@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@baltimorecounty/dotgov-components";
 
-const DecisionTree = (props) => {
+const Message = (props) => {
   var buttonElements = [];
   const { options } = props;
   props.choices.forEach((choice, i) => {
@@ -30,4 +30,4 @@ const DecisionTree = (props) => {
   );
 };
 
-export default DecisionTree;
+export default Message;
