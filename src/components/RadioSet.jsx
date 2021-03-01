@@ -14,35 +14,39 @@ const DecisionTree = (props) => {
   };
 
   return (
-    <div className="centered-row-parent">
+    <div className="container">
       {props.choices.map(({ ChoiceText, GoTo }) => {
         return (
-          <div key={"radio" + ChoiceText + GoTo} className="row radio-body">
-            <Card>
-              <CardContent className="text-left">
-                <div className="dg_radio">
-                  <input
-                    className="dg_radio-input"
-                    id={ChoiceText + GoTo}
-                    name={"radio" + props.id}
-                    type="radio"
-                    value={ChoiceText + "|" + GoTo}
-                    onChange={handleSelectionChange}
-                  />
-                  <label
-                    className="dg_label dg_radio-label"
-                    htmlFor={ChoiceText + GoTo}
-                  >
-                    {ChoiceText}
-                  </label>
-                </div>
-              </CardContent>
-            </Card>
+          <div key={"radio" + ChoiceText + GoTo} className="row d-flex">
+            <div className="col-md-8 col-xs-12 align-self-center">
+              <Card>
+                <CardContent className="text-left">
+                  <div className="dg_radio">
+                    <input
+                      className="dg_radio-input"
+                      id={ChoiceText + GoTo}
+                      name={"radio" + props.id}
+                      type="radio"
+                      value={ChoiceText + "|" + GoTo}
+                      onChange={handleSelectionChange}
+                    />
+                    <label
+                      className="dg_label dg_radio-label"
+                      htmlFor={ChoiceText + GoTo}
+                    >
+                      {ChoiceText}
+                    </label>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         );
       })}
-      <div className="row centered-row">
-        <Button text="Next" onClick={handlesOnClickGo} />
+      <div className="row d-flex">
+        <div className="col-md-6 col-xs-12">
+          <Button text="Next" onClick={handlesOnClickGo} />
+        </div>
       </div>
     </div>
   );
