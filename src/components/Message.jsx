@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@baltimorecounty/dotgov-components";
 
-const DecisionTree = (props) => {
+const Message = (props) => {
   var buttonElements = [];
   const { options } = props;
 console.log(options)
@@ -31,4 +31,4 @@ console.log(options)
   );
 };
 
-export default DecisionTree;
+export default Message;
