@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Button, Select } from "@baltimorecounty/dotgov-components";
+import { Select } from "@baltimorecounty/dotgov-components";
 import ErrorMessage from "./ErrorMessage";
+import NextButton from "./NextButton";
 
 const DecisionTree = (props) => {
   const [getDropdownChoice, setDropdownChoice] = useState(0);
@@ -9,17 +10,6 @@ const DecisionTree = (props) => {
   const handleSelectionChange = (event) => {
     setDropdownChoice(event.target.value);
     setHasError(false);
-  };
-
-  const handlesOnClickGo = () => {
-    if (getDropdownChoice) {
-      var goToValue = getDropdownChoice.substring(
-        getDropdownChoice.indexOf("|") + 1
-      );
-      props.goToStep(goToValue);
-    } else {
-      setHasError(true);
-    }
   };
 
   var selectOptions = [];
@@ -49,7 +39,11 @@ const DecisionTree = (props) => {
           </div>
         </div>
         <div className="row d-flex dg_questionnaire_content">
-          <Button text="Next" onClick={handlesOnClickGo} />
+          <NextButton
+            inputValue={getDropdownChoice}
+            goToStep={props.goToStep}
+            setHasError={setHasError}
+          />
         </div>
       </div>{" "}
     </div>
