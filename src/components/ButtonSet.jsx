@@ -5,7 +5,7 @@ const DecisionTree = (props) => {
   var buttonElements = [];
   props.choices.forEach((choice, i) => {
     const handlesOnClickGo = () => {
-      if (choice.GoToType == "Link") {
+      if (choice.GoToType === "Link") {
         window.location.href = choice.GoTo;
       } else {
         props.goToStep(choice.GoTo);

@@ -6,7 +6,7 @@ const Message = (props) => {
   const { options } = props;
   props.choices.forEach((choice, i) => {
     const handlesOnClickGo = () => {
-      if (choice.GoToType == "Link") {
+      if (choice.GoToType === "Link") {
         window.location.href = choice.GoTo;
       } else {
         props.goToStep(choice.GoTo);

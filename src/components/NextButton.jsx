@@ -8,7 +8,7 @@ const NextButton = (props) => {
       var valueIndex = props.inputValue.indexOf("|", typeIndex);
       var goToType = props.inputValue.substring(typeIndex + 1);
       var goToValue = props.inputValue.substring(valueIndex + 1);
-      if (goToType == "Link") {
+      if (goToType === "Link") {
         window.location.href = goToValue;
       } else {
         props.goToStep(goToValue);
