@@ -21,7 +21,7 @@ const DecisionTree = (props) => {
           </div>
         ) : null}
       </div>
-      {props.choices.map(({ ChoiceText, GoTo }) => {
+      {props.choices.map(({ ChoiceText, GoToType, GoTo }) => {
         return (
           <div key={"radio" + ChoiceText + GoTo} className="row d-flex">
             <div className="col-md-8 col-xs-12 align-self-center">
@@ -33,7 +33,7 @@ const DecisionTree = (props) => {
                       id={ChoiceText + GoTo}
                       name={"radio" + props.id}
                       type="radio"
-                      value={ChoiceText + "|" + GoTo}
+                      value={ChoiceText + "|" + GoToType + "|" + GoTo}
                       onChange={handleSelectionChange}
                     />
                     <label
