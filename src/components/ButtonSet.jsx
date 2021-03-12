@@ -5,8 +5,12 @@ const DecisionTree = (props) => {
   var buttonElements = [];
   props.choices.forEach((choice, i) => {
     const handlesOnClickGo = () => {
-      props.goToStep(choice.GoTo);
-      window.scrollTo(0, 0);
+      if (choice.GoToType === "Link") {
+        window.location.href = choice.GoTo;
+      } else {
+        props.goToStep(choice.GoTo);
+        window.scrollTo(0, 0);
+      }
     };
 
     buttonElements.push(

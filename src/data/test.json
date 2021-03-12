@@ -49,7 +49,8 @@
         },
         {
           "ChoiceText": "Virginia",
-          "GoTo": "4"
+          "GoToType": "Link",
+          "GoTo": "https://www.virginia.gov/"
         },
         {
           "ChoiceText": "Pennsylvania",

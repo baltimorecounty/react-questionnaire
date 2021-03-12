@@ -15,7 +15,7 @@ const DecisionTree = (props) => {
   var selectOptions = [];
   props.choices.forEach((choice, i) => {
     selectOptions.push({
-      id: choice.ChoiceText + "|" + choice.GoTo,
+      id: choice.ChoiceText + "|" + choice.goToType + "|" + choice.GoTo,
       name: choice.ChoiceText,
     });
   });
