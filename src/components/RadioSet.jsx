@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Button, Card, CardContent } from "@baltimorecounty/dotgov-components";
+import { Card, CardContent } from "@baltimorecounty/dotgov-components";
 import ErrorMessage from "./ErrorMessage";
+import NextButton from "./NextButton";
 
 const DecisionTree = (props) => {
   const [getRadioValue, setRadioValue] = useState(0);
@@ -9,15 +10,6 @@ const DecisionTree = (props) => {
   const handleSelectionChange = (event) => {
     setRadioValue(event.target.value);
     setHasError(false);
-  };
-
-  const handlesOnClickGo = () => {
-    if (getRadioValue) {
-      var goToValue = getRadioValue.substring(getRadioValue.indexOf("|") + 1);
-      props.goToStep(goToValue);
-    } else {
-      setHasError(true);
-    }
   };
 
   return (
@@ -58,7 +50,11 @@ const DecisionTree = (props) => {
         );
       })}
       <div className="row d-flex dg_questionnaire_content">
-        <Button text="Next" onClick={handlesOnClickGo} />
+        <NextButton
+          inputValue={getRadioValue}
+          goToStep={props.goToStep}
+          setHasError={setHasError}
+        />
       </div>
     </div>
   );
