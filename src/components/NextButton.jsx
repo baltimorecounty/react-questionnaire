@@ -5,8 +5,8 @@ const NextButton = (props) => {
   const handlesOnClickGo = () => {
     if (props.inputValue) {
       var typeIndex = props.inputValue.indexOf("|");
-      var valueIndex = props.inputValue.indexOf("|", typeIndex);
-      var goToType = props.inputValue.substring(typeIndex + 1);
+      var valueIndex = props.inputValue.indexOf("|", typeIndex + 1);
+      var goToType = props.inputValue.substring(typeIndex + 1, valueIndex);
       var goToValue = props.inputValue.substring(valueIndex + 1);
       if (goToType === "Link") {
         window.location.href = goToValue;
